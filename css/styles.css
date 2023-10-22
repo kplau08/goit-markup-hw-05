@@ -22,7 +22,7 @@
   --navy-blue-modal: rgba(46, 47, 66, 0.4);
   --grey: rgba(46, 47, 66, 0.7);
   --white: #ffffff;
-  --dairy: rgba(46, 47, 66, 0.4);
+  --dairy: rgba(252, 252, 252, 1);
 }
 
 /* GENERAL */
@@ -56,7 +56,7 @@ h2 {
 }
 /* END OF GENERAL */
 
-/* START OF NAV BAR */
+/* START OF NAVIGATION BAR */
 
 .logo-web {
   color: var(--iris);
@@ -156,7 +156,19 @@ ul {
 .contact-details {
   padding-right: 40px;
 }
-/* END OF NAV BAR */
+
+.active::after {
+  content: " ";
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--iris);
+  position: relative;
+  top: 20px;
+}
+
+/* END OF NAVIGATION BAR */
 
 /* START OF HERO SECTION */
 .hero {
@@ -208,6 +220,31 @@ h1 {
 .order-btn:hover {
   background-color: var(--ocean);
   cursor: pointer;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--navy-blue-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-modal {
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  background: var(--dairy);
+  /* box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14); */
+}
+
+.is-hidden {
+  visibility: hidden;
 }
 /* END OF HERO SECTION */
 
@@ -579,4 +616,47 @@ h4 {
     0px 1px 1px 0px rgba(46, 47, 66, 0.16),
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
   cursor: pointer;
+}
+
+.project:hover .project-image-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+.project-image-caption {
+  width: 360px;
+  height: 300px;
+  flex-shrink: 0;
+  background-color: var(--iris);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--cloud);
+  opacity: 0;
+
+  /* Body */
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
+  align-items: left;
+  transform: translateY(100%);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-image-caption p {
+  padding: 40px 32px;
+  align-items: right;
+}
+
+.project {
+  overflow: hidden;
 }
