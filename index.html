@@ -59,12 +59,15 @@
             for Your Business
           </h1>
         </div>
-        <button class="order-btn data-modal-open" type="button">
+
+        <button class="order-btn" data-modal-open type="button">
           Order Service
         </button>
-        <div class="modal">
-          <div class="data-modal data-modal-close">
-            <button type="button">&times;</button>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <button type="button" class="modal-close-btn" data-modal-close>
+              &times;
+            </button>
           </div>
         </div>
       </section>
